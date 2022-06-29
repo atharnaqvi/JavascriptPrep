@@ -41,3 +41,45 @@ checkMiddleSeat('11A');
 checkMiddleSeat('24B');
 checkMiddleSeat('41F');
 checkMiddleSeat('22E');
+
+//a function to correct the first capital letter and rest lower case.
+//let passenagerName = prompt('Enter your name: ');
+const passenagerName = 'atHAR';
+const capitalisation = function (strName) {
+  const correctName =
+    passenagerName.charAt(0).toUpperCase() +
+    passenagerName.slice(1).toLowerCase();
+  console.log(correctName);
+};
+
+capitalisation(passenagerName);
+
+// Comparing two email address
+
+const email = 'atharnaqvi@gmail.com';
+let inputEmail = '    aTHARNAQVI@GMAIL.COM \n';
+
+inputEmail = inputEmail.toLowerCase().trim();
+console.log(inputEmail);
+inputEmail === email
+  ? console.log('email is valid')
+  : console.log('email is not valid');
+
+//trim() method is used to take off any empty string values
+// there is also in ES6 trimStart and trimEnd methods
+
+const testStr = '    laskdl    ';
+const trimStartTest = testStr.trimStart();
+console.log(`Trim Start Test: ${trimStartTest}`);
+
+const trimEndTest = testStr.trimEnd();
+console.log(`Trim End Test: ${trimEndTest}`);
+
+const trimTest = testStr.trim();
+console.log(`Trim test : ${trimTest}`);
+
+//replace a string with some other string
+
+const priceUK = '£233,22';
+const priceUS = priceUK.replace('£', '$').replace(',', '.');
+console.log(priceUS);
