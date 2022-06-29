@@ -36,7 +36,7 @@ const questions = new Map([
 
 console.log(questions);
 
-console.log(questions.get('Question'));
+// console.log(questions.get('Question'));
 for (const [key, value] of questions) {
   if (typeof key === 'number') console.log(`${key}: ${value}`);
 }
@@ -50,6 +50,6 @@ console.log(questions.get(questions.get('correct') === answer));
 // convert map to Array
 
 console.log([...questions]);
-console.log(questions.entries());
+console.log(questions.enteries());
 console.log([...questions.keys()]);
 console.log([...questions.values()]);
