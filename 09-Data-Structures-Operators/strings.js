@@ -83,3 +83,103 @@ console.log(`Trim test : ${trimTest}`);
 const priceUK = '£233,22';
 const priceUS = priceUK.replace('£', '$').replace(',', '.');
 console.log(priceUS);
+
+let announcements =
+  'To all customers, please come to boarding gate # 23, all customers to boading gate # 23 please';
+
+announcements = announcements.replaceAll('gate', 'door');
+// console.log(announcements);
+
+//using regex or regular expression to replace a string with some other string
+announcements = announcements.replace(/customers/g, 'passengers');
+console.log(announcements);
+
+//Boolean output
+const ticketRef = 'Airbus A320neo';
+console.log(ticketRef.includes('A320')); //true
+console.log(ticketRef.includes('a320')); //false
+console.log(ticketRef.includes('320n')); //true
+console.log(ticketRef.startsWith('Airbus')); //true
+
+if (ticketRef.startsWith('Airbus') && ticketRef.endsWith('neo')) {
+  console.log(`${ticketRef} is for New type of Airbus called 'Neo'`);
+}
+const notAllowed = ['gun', 'knife', 'arsnel', 'weapon', 'pistol', 'milk'];
+
+//A function to check if baggage items are in allowed categories
+const bagageCheck = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (notAllowed.indexOf(baggage) > -1) {
+    console.log(
+      `Beause you got ${items}, that's why you are not allowed to travell`
+    );
+    console.log(
+      `NOTE: The following items are prohibited to take on board: ${notAllowed}`
+    );
+    console.log(notAllowed.indexOf(baggage));
+    console.log(
+      '---------------------------------------------------------------- '
+    );
+  } else {
+    console.log('Welcome on board');
+    console.log(notAllowed.indexOf(baggage));
+    console.log(
+      '---------------------------------------------------------------- '
+    );
+  }
+};
+
+bagageCheck('KNIFE');
+bagageCheck('GUN');
+bagageCheck('Cloths');
+bagageCheck('milk');
+
+//Split method
+
+const jubrish = 'this+is+jubrish+text'.split('+');
+console.log(jubrish);
+
+const fullName = 'Athar Naqvi';
+const [firstname, lastname] = fullName.split(' ');
+console.log(`First name: ${firstname}`);
+console.log(`Last name: ${lastname}`);
+
+const newName = ['Mr.', firstname, lastname].join(' ');
+console.log(newName);
+
+//Convert first letter of a sentence to upper case
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const fullNames = [];
+  for (const n of names) {
+    //fullNames.push(n[0].toUpperCase() + n.slice(1));
+    fullNames.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(fullNames.join(' '));
+};
+
+capitalizeName('syed athar ali naqvi');
+capitalizeName('john mick tan');
+
+//Padding padStart and padEnd
+
+const paddStr = 'A320neo';
+console.log(paddStr.padStart(12, '#').padEnd(16, '#'));
+
+//Hide credit card number except last 4 digits
+
+const hideStrFunc = function (Numb) {
+  const str = Numb + '';
+  const strLast = str.slice(-4);
+  return strLast.padStart(str.length, '*');
+};
+
+console.log(hideStrFunc(31313215613));
+console.log(hideStrFunc(123456789123456));
+
+// Repeate the same strings x number of times
+
+const badWeatherAlert = 'Bad weather Alert, ... all flights are delayed';
+console.log(badWeatherAlert.repeat(4));
