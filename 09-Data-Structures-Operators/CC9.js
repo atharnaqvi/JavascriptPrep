@@ -34,3 +34,19 @@ GOOD LUCK 😀*/
 
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  for (const [i, row] of rows.entries()) {
+    const [firstWord, lastWord] = row.split('_');
+    const camelCase = (
+      firstWord.toLowerCase() +
+      lastWord[0].toUpperCase() +
+      lastWord.slice(1)
+    ).trim();
+    console.log(`${camelCase.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+
+  //   console.log(rows);
+});
